@@ -14,3 +14,35 @@
 4. go to postman and test the ENDPOINTS from the requirement.md
 
 ### database and backend Port: http://localhost:3000/
+
+## information required in body to send with POST routes :-
+- in /users Post route && in /users/auth Post route :- 
+```
+{
+ "firstName": "a first name",
+ "secondName": "a second name",
+ "password": "a password"
+}
+```
+- in /products Post route :-
+```
+{
+ "name": "a product name",
+ "price": "the product price"
+}
+```
+- in /orders Post route :-
+```
+{
+ "status": "the status of the order [active/closed]",
+ "userId": "the user's order id"
+}
+```
+- in /orders/:id/products Post route :-
+```
+{
+ "quantity": "the quantity of the product",
+ "orderId": "the order id which the product will be added to it",
+ "productId": "the product id that will be added to the order"
+}
+```
