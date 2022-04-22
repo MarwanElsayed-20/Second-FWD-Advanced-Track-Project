@@ -17,7 +17,7 @@
 - start psql `psql postgres`
 - `CREATE USER shop_owner WITH PASSWORD 'password123';`
 - `CREATE DATABASE shopping_store;`
-- `CREATE DATABASE shopping_store_test;
+- `CREATE DATABASE shopping_store_test;`
 - `GRANT ALL PRIVILEGES ON DATABASE shopping_store TO shop_owner;`
 - `GRANT ALL PRIVILEGES ON DATABASE shopping_store_test TO shop_owner;`
 
