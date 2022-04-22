@@ -13,6 +13,14 @@
 3. npm run start > to run the server
 4. go to postman and test the ENDPOINTS from the requirement.md
 
+## create and run the database :-
+- start psql `psql postgres`
+- `CREATE USER shop_owner WITH PASSWORD 'password123';`
+- `CREATE DATABASE shopping_store;`
+- `CREATE DATABASE shopping_store_test;
+- `GRANT ALL PRIVILEGES ON DATABASE shopping_store TO shop_owner;`
+- `GRANT ALL PRIVILEGES ON DATABASE shopping_store_test TO shop_owner;`
+
 ### database and backend Port: http://localhost:3000/
 
 ## information required in body to send with POST routes :-
