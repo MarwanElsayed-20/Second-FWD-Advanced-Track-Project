@@ -14,6 +14,16 @@ const order = new UserOrder();
 // create the create route
 const create = async (req: Request, res: Response) => {
   try {
+    const authorizationHeader = req.headers.authorization as string;
+    const token = authorizationHeader.split(" ")[1];
+    jwt.verify(token, secretToken as unknown as string);
+  } catch (err) {
+    res.status(401);
+    res.json(`Access denied, invalid token`);
+    return;
+  }
+
+  try {
     const newOrder = await order.create(req.body);
     res.json(newOrder);
   } catch (err) {
@@ -23,6 +33,16 @@ const create = async (req: Request, res: Response) => {
 
 // create the index route
 const index = async (req: Request, res: Response) => {
+  try {
+    const authorizationHeader = req.headers.authorization as string;
+    const token = authorizationHeader.split(" ")[1];
+    jwt.verify(token, secretToken as unknown as string);
+  } catch (err) {
+    res.status(401);
+    res.json(`Access denied, invalid token`);
+    return;
+  }
+
   try {
     const allOrders = await order.index();
     res.json(allOrders);
@@ -62,6 +82,16 @@ const addProduct = async (req: Request, res: Response) => {
   const quantity: number = parseInt(req.body.quantity);
   const orderId: string = req.params.id;
   const productId: string = req.body.productId;
+
+  try {
+    const authorizationHeader = req.headers.authorization as string;
+    const token = authorizationHeader.split(" ")[1];
+    jwt.verify(token, secretToken as unknown as string);
+  } catch (err) {
+    res.status(401);
+    res.json(`Access denied, invalid token`);
+    return;
+  }
 
   try {
     const addedProducts = await order.addProduct(quantity, orderId, productId);
