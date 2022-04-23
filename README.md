@@ -21,7 +21,9 @@
 - `GRANT ALL PRIVILEGES ON DATABASE shopping_store TO shop_owner;`
 - `GRANT ALL PRIVILEGES ON DATABASE shopping_store_test TO shop_owner;`
 
-### database and backend Port: http://localhost:3000/
+## ports :-
+- Server port : 3000
+- DB port : 5432
 
 ## information required in body to send with POST routes :-
 - in /users Post route && in /users/auth Post route :- 
